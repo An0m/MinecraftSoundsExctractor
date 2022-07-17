@@ -21,11 +21,8 @@ try:
         # Exctract the files
         print("Extracting...")
         for filePath, fileName in sounds:
-            src_fpath = f"{assetsFolder}/objects/{fileName[:2]}/{fileName}"
-            dest_fpath = f"{version}/{filePath}"
-
-            os.makedirs(os.path.dirname(dest_fpath), exist_ok=True)
-            shutil.copyfile(src_fpath, dest_fpath)
+            os.makedirs(os.path.dirname(f"{version}/{filePath}"), exist_ok=True)
+            shutil.copyfile(f"{assetsFolder}/objects/{fileName[:2]}/{fileName}", f"{version}/{filePath}")
         print("Done!")
 except:
     print("Invalid Minecraft version")
